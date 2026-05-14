@@ -3,6 +3,43 @@
 // Desafio de Xadrez - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+void moverBispo(int casas){
+    if(casas <= 0){
+        return;}
+    
+//loop vertical
+ for(int vertical = 1; vertical <= 1; vertical++){
+    //loop horizontal
+    int horizontal = 1;
+
+    while(horizontal <= 1){
+        printf("Cima, Direita\n");
+        horizontal++;}
+    }    
+moverBispo(casas - 1);
+
+}
+
+
+void moverTorre(int casas){
+    if(casas <= 0){
+    return;}
+
+  printf("Direita\n");
+
+  moverTorre(casas - 1);
+}
+
+void moverRainha(int casas){
+    if(casas <= 0){
+        return;
+    }
+printf("Esquerda\n");
+
+moverRainha(casas - 1);
+}
+
+
 
 int main() {
     // Nível Novato - Movimentação das Peças
@@ -11,18 +48,14 @@ int main() {
    int casasBispo = 5;
    int casasRainha = 8; 
 
-   int i;
+   
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
    printf("Movimento do Bispo \n");
 
-   i = 1;
-//bispo se move 5 casas na diagonal (cima + direita)
-while (i <= casasBispo)
-{
-    printf("Cima, Direita\n");
-    i++;
-}
+   moverBispo(casasBispo);
+
+
 
 printf("\n");
 
@@ -31,10 +64,8 @@ printf("\n");
 
 printf("Movimento da Torre\n");
 
-//torre se move 5 casas para direita
-for(i = 1; i <= casasTorre; i++){
-    printf("DIreita\n");
-}
+
+moverTorre(casasTorre);
 
 printf("\n");
 
@@ -44,14 +75,9 @@ printf("\n");
 
 printf("Movimento da Rainha\n");
 
-i = 1;
-//Rainha se move 8 casas a esquerda
+moverRainha(casasRainha);
 
-do
-{
-   printf("Esquerda\n");
-   i++;
-} while (i <= casasRainha);
+
 
 
 printf("\n");
@@ -60,29 +86,24 @@ printf("\n");
     // Um loop pode representar a movimentação horizontal e outro vertical.
 
 //movimentodo cavalo
-
-int movimentoVertical = 2;
-int movimentoHorizontal = 1;
-
 printf("movimento do Cavalo\n");
 
-for(i = 1; i <= movimentoVertical; i++){
+for(int vertical = 1, horizontal = 1;
+    vertical <= 2 || horizontal <= 1;
+    vertical++){
+        //movimento vertical
+        if(vertical <= 2){
+            printf("Cima\n");
+        }
 
-    int j =1;
-    while(j <= 1){
-        printf("Baixo\n");
-        j++;
+if(vertical == 2){
+    while(horizontal <= 1){
+        printf("Direita\n");
+        horizontal++;
     }
 }
+    }
 
-//movimento apos descer duas casas
-
-i = 1;
-
-while(i <= movimentoHorizontal){
-    printf("Esquerda\n");
-    i++;
-}
 
 
 
